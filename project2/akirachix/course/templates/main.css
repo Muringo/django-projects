@@ -1,0 +1,13 @@
+body{
+	background-image: url(../css/birds.jpg);
+	background-size: cover; 
+	background-repeat: no-repeat;
+    background-attachment: absolute;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.nop{
+	background-color: #6699cc;
+}
+.pen{
+	text-transform: uppercase;
+}
