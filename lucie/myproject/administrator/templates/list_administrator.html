@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List of administrator</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>Product Name</th>
+			<th>Product Image</th>
+			<th>Product Description</th>
+			{% for administrator in administrators%}
+			<tr>
+				<td>{{administrator.product_name}}</td>
+				<td>{{administrator.product_image}}</td>
+				<td>{{administrator.product_description}}</td>
+			</tr>
+		{%endfor%}
+	</table>
+
+</body>
+</html>
