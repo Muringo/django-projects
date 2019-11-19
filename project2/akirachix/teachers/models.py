@@ -11,3 +11,9 @@ class Teachers(models.Model):
 	gmail = models.EmailField()
 	id_number = models.IntegerField()
 	image = models.ImageField(upload_to='profile_pics', blank = True)
+
+	def full_name(self):
+		return "{} {}".format(
+			self.first_name,
+			self.last_name
+			)

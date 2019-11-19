@@ -1,12 +1,16 @@
 from django.shortcuts import render
 from .forms import TeacherForm
 from .models import Teachers
+from django.http import HttpResponse
 
 def add_teacher(request):
     if request.method == "POST":
         form = TeacherForm(request.POST)
         if form.is_valid():
             form.save()
+        else:
+            return HttpResponse("invalid data",status=400)
+        
     else:
         form = TeacherForm()
     return render(request, "add_teacher.html", {"form":form})
@@ -36,4 +40,5 @@ def edit_teacher(request, pk):
     return render(request, "edit_teacher.html", {"form":form})
             
 
-# Create your views here.
+
+   

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+
 from blog.forms import CommentForm
 from blog.models import Post, Comment
 

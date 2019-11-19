@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.conf.urls import url, include
 from .views import StudentViewSet
 from .views import TeachersViewSet
 from .views import CourseViewSet
@@ -11,5 +11,5 @@ router.register("course", CourseViewSet)
 
 
 urlpatterns = [
-path("", include(router.urls)),
+url("", include(router.urls)),
 ]   

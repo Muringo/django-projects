@@ -1,12 +1,17 @@
 from django.shortcuts import render
 from .forms import CourseForm
 from .models import Course
+from django.shortcuts import redirect
+from django.http import HttpResponseBadRequest
+
 
 def add_course(request):
     if request.method == "POST":
         form = CourseForm(request.POST)
         if form.is_valid():
             form.save()
+        else:
+            return HttpResponseBadRequest()
     else:
         form = CourseForm()
     return render(request, "add_course.html", {"form":form})
@@ -37,6 +42,4 @@ def edit_course(request, pk):
     
     
 
-
-
-
+# Create your tests here.
